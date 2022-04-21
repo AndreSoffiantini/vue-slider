@@ -11,6 +11,7 @@ const app = new Vue({
 
         currentImage: 0,
         executed: false,
+        stopped: false,
 
         images:
 
@@ -54,7 +55,7 @@ const app = new Vue({
         },
 
         nextImg() {
-            console.log("next");
+            //console.log("next");
             this.currentImage++;
             if (this.currentImage === this.images.length) {
                 this.currentImage = 0;
@@ -66,14 +67,29 @@ const app = new Vue({
             this.currentImage = parseInt(event.target.id);
         },
 
-        autoplay() {
+        startAutoplay() {
 
-            if (this.executed === false) {
-                setInterval(this.nextImg, 3000);
+            if (!this.executed) {
+                const slideImg = setInterval(this.nextImg, 3000);
                 this.executed = true;
+                document.querySelector(".col_10").onmouseover = function() {
+                    console.log("stop");
+                    clearInterval(slideImg);
+                };
             }
 
-        }
+        },
+
+        /* stopAutoplay() {
+
+            if (!this.stopped) {
+                console.log("stop");
+                clearInterval(this.slideImg);
+                this.executed = false;
+                this.stopped = true;
+            }
+
+        } */
 
     }
 });
