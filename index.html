@@ -19,20 +19,18 @@
 
                 <div class="col_90">
 
-                    <img src="./assets/img/01.jpg" alt="">
+                    <img :src="images[currentImage].image" :alt="images[currentImage].title">
 
                     <div class="cover_text">
-                        <h3>Svezia</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa temporibus earum illo voluptatibus. Tempore aspernatur quaerat exercitationem quae neque officiis sapiente delectus dolores provident ratione, id minus veniam similique
-                            maxime?
-                        </p>
+                        <h3>{{images[currentImage].title}}</h3>
+                        <p>{{images[currentImage].text}}</p>
                     </div>
 
                 </div>
 
                 <div class="col_10">
                     <div class="thumbnails">
-                        <img :src="thumb.image" class="thumb" alt="" v-for="thumb in images">
+                        <img :src="thumb.image" class="thumb" :alt="thumb.title" v-for="thumb in images">
 
                         <div class="slider">
                             <div class="prev"><i class="fa-solid fa-angle-up"></i></div>

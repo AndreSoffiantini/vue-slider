@@ -88,4 +88,5 @@ img {
     color: #766f6f;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }

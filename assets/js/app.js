@@ -9,6 +9,8 @@ const app = new Vue({
 
     data: {
 
+        currentImage: 0,
+
         images:
 
             [{
@@ -44,3 +46,10 @@ const app = new Vue({
 
     }
 })
+
+/* MILESTONE 2
+Adesso rimuoviamo il markup statico in eccesso e inseriamo le immagini dinamicamente 
+servendoci della struttura dati fornita. Stampiamo prima l'immagine grande 
+e usiamo la direttiva v-for per stampare tutti i thumbnails.
+Al termine di questa fase ci ritroveremo con lo stesso slider, ma costruito 
+dinamicamente attraverso Vue-js. */
