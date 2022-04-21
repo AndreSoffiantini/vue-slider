@@ -58,6 +58,11 @@ const app = new Vue({
             if (this.currentImage === this.images.length) {
                 this.currentImage = 0;
             }
+        },
+
+        selectImg(event) {
+            console.log(event.target);
+            this.currentImage = parseInt(event.target.id);
         }
 
     }
@@ -78,3 +83,6 @@ e nel suo angolo in basso a destra dovranno essere aggiunti i relativi:
 - titolo e - testo.
 Allo stesso tempo nelle miniature l'immagine attiva dovrà apparire 
 in evidenza rispetto alle altre. */
+
+/* Bonus:
+1- al click su una thumb, visualizzare in grande l'immagine corrispondente */

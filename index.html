@@ -30,7 +30,7 @@
 
                 <div class="col_10">
                     <div class="thumbnails">
-                        <img :src="thumb.image" class="thumb" :class="currentImage === index ? 'selected' : ''" :alt="thumb.title" v-for="(thumb,index) in images">
+                        <img :src="thumb.image" class="thumb" :id="index" :class="currentImage === index ? 'selected' : ''" :alt="thumb.title" v-for="(thumb,index) in images" @click="selectImg($event)">
 
                         <div class="slider">
                             <div class="prev" @click="prevImg"><i class="fa-solid fa-angle-up"></i></div>
