@@ -10,6 +10,7 @@ const app = new Vue({
     data: {
 
         currentImage: 0,
+        executed: false,
 
         images:
 
@@ -66,7 +67,12 @@ const app = new Vue({
         },
 
         autoplay() {
-            setInterval(this.nextImg, 3000);
+
+            if (this.executed === false) {
+                setInterval(this.nextImg, 3000);
+                this.executed = true;
+            }
+
         }
 
     }
