@@ -61,12 +61,16 @@ const app = new Vue({
         },
 
         selectImg(event) {
-            console.log(event.target);
+            //console.log(event.target);
             this.currentImage = parseInt(event.target.id);
+        },
+
+        autoplay() {
+            setInterval(this.nextImg, 3000);
         }
 
     }
-})
+});
 
 /* MILESTONE 2
 Adesso rimuoviamo il markup statico in eccesso e inseriamo le immagini dinamicamente 
