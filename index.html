@@ -30,11 +30,11 @@
 
                 <div class="col_10">
                     <div class="thumbnails">
-                        <img :src="thumb.image" class="thumb" :alt="thumb.title" v-for="thumb in images">
+                        <img :src="thumb.image" class="thumb" :class="currentImage === index ? 'selected' : ''" :alt="thumb.title" v-for="(thumb,index) in images">
 
                         <div class="slider">
-                            <div class="prev"><i class="fa-solid fa-angle-up"></i></div>
-                            <div class="next"><i class="fa-solid fa-angle-down"></i></div>
+                            <div class="prev" @click="prevImg"><i class="fa-solid fa-angle-up"></i></div>
+                            <div class="next" @click="nextImg"><i class="fa-solid fa-angle-down"></i></div>
                         </div>
                     </div>
                 </div>
